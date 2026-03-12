@@ -21,18 +21,16 @@ body, html{
   left:0;
   width:100%;
   z-index:10;
-  padding:15px 40px; /* потоньше */
+  padding:15px 40px; /* чуть потоньше */
   display:flex;
   justify-content:space-between;
   align-items:center;
   transition:background 0.5s, padding 0.3s;
 }
-
 .navbar.scrolled{
   background:rgba(11,15,20,0.95);
   padding:10px 40px;
 }
-
 .logo img{
   height:100px;
   transition: height 0.3s;
@@ -44,27 +42,23 @@ body, html{
   flex-direction:column;
   justify-content:space-between;
   width:30px;
-  height:25px;
+  height:25px; /* чуть компактнее */
   cursor:pointer;
   z-index:15;
 }
-
 .menu-button span{
   display:block;
-  height:3px; /* потоньше полоски */
+  height:3px; /* тоньше */
   background:#d4af37;
   border-radius:2px;
   transition:all 0.5s;
 }
-
 .menu-button.open span:nth-child(1){
   transform:rotate(45deg) translate(5px,5px);
 }
-
 .menu-button.open span:nth-child(2){
   opacity:0;
 }
-
 .menu-button.open span:nth-child(3){
   transform:rotate(-45deg) translate(5px,-5px);
 }
@@ -87,36 +81,17 @@ body, html{
   transform:translateY(-100%);
   transition:transform 0.5s;
 }
-
 .menu-overlay a{
   color:white;
   font-family:serif;
   letter-spacing:3px;
   transition:opacity 0.3s;
 }
-
 .menu-overlay a:hover{
   opacity:0.7;
 }
-
 .menu-overlay.show{
   transform:translateY(0);
-}
-
-/* DESKTOP MENU */
-@media(min-width:992px){
-  .menu-button { display:none; }
-  .menu-overlay{
-    display:flex;
-    flex-direction:row;
-    justify-content:flex-end;
-    gap:40px;
-    font-size:18px;
-    transform:translateY(0);
-    position:static;
-    background:none;
-    height:auto;
-  }
 }
 
 /* HERO VIDEO */
@@ -129,7 +104,6 @@ body, html{
   align-items:center;
   text-align:center;
 }
-
 .hero-video video{
   position:absolute;
   top:50%;
@@ -140,11 +114,9 @@ body, html{
   object-fit:cover;
   transition: transform 0.5s ease;
 }
-
 .hero-video:hover video{
   transform:translate(-50%, -50%) scale(1.05);
 }
-
 .overlay{
   position:absolute;
   top:0;
@@ -153,13 +125,11 @@ body, html{
   height:100%;
   background:rgba(0,0,0,0.45);
 }
-
 .hero-content{
   position:relative;
   z-index:2;
   max-width:900px;
 }
-
 .hero-title{
   font-size:60px;
   font-family:serif;
@@ -168,23 +138,33 @@ body, html{
   margin-bottom:20px;
   text-shadow:0 2px 20px rgba(0,0,0,0.7);
 }
-
 .hero-subtitle{
   font-size:24px;
   margin-bottom:30px;
 }
+.button{
+  padding:15px 30px;
+  border-radius:30px;
+  background:#d4af37;
+  color:black;
+  font-weight:bold;
+  font-size:18px;
+  text-decoration:none;
+  transition: all 0.3s;
+}
+.button:hover{
+  box-shadow:0 0 20px #d4af37;
+  transform:scale(1.05);
+}
 
 /* YACHTS */
 .yacht-section{
-  padding:60px 20px;
-  display:flex;
-  flex-direction:column;
-  gap:60px;
+  padding:60px 0;
 }
-
 .yacht-card{
   position:relative;
   height:80vh;
+  margin-bottom:80px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -192,7 +172,6 @@ body, html{
   overflow:hidden;
   border-radius:15px;
 }
-
 .yacht-card video{
   position:absolute;
   top:50%;
@@ -207,24 +186,20 @@ body, html{
   transition:transform 0.6s;
   border-radius:15px;
 }
-
 .yacht-card:hover video{
   transform:translate(-50%, -50%) scale(1.05);
 }
-
 .yacht-content{
   position:relative;
   z-index:2;
   max-width:700px;
 }
-
 .yacht-title{
   font-size:50px;
   font-family:serif;
   color:#d4af37;
   margin-bottom:20px;
 }
-
 .yacht-subtitle{
   font-size:20px;
   margin-bottom:30px;
@@ -237,24 +212,20 @@ body, html{
   background:#0b0f14;
   text-align:center;
 }
-
 .contact-section h2{
   color:#d4af37;
   font-family:serif;
   margin-bottom:20px;
 }
-
 .contact-section p{
   margin:5px 0;
   font-size:18px;
 }
-
 .contact-map{
   margin-top:40px;
   border:5px solid #d4af37;
   border-radius:15px;
   overflow:hidden;
-  filter: grayscale(20%) brightness(0.9);
 }
 
 /* WHATSAPP */
@@ -306,7 +277,6 @@ body, html{
     <div class="hero-subtitle">Explore Tenerife & the Canary Islands with Ocean Peak</div>
     <a href="#yachts" class="button">Explore our fleet</a>
   </div>
-  <div class="scroll-hint">⬇</div>
 </section>
 
 <!-- YACHTS SECTION -->
@@ -352,9 +322,7 @@ body, html{
   <p>📞 +34 123 456 789</p>
   <p>✉️ info@oceanpeak.com</p>
   <div class="contact-map">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2405.285521079353!2d-16.731222784232673!3d28.076442582526673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc41f99170d3c9b7%3A0x65855ee7e9db0f55!2sPuerto%20Col%C3%B3n!5e0!3m2!1sen!2ses!4v1600000000000!5m2!1sen!2ses"
-      width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2405.285521079353!2d-16.731222784232673!3d28.076442582526673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc41f99170d3c9b7%3A0x65855ee7e9db0f55!2sPuerto%20Col%C3%B3n!5e0!3m2!1sen!2ses!4v1600000000000!5m2!1sen!2ses" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </div>
 </section>
 
