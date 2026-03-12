@@ -14,23 +14,55 @@ body, html{
   background:#0b0f14;
 }
 
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <img src="logo.png" alt="Ocean Peak">
+    </div>
+
+    <!-- Burger Button -->
+    <div class="menu-button" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+<!-- Menu Overlay -->
+<div class="menu-overlay" id="menu">
+  <a href="#">Home</a>
+  <a href="#yachts">Yachts</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<style>
 /* NAVBAR */
 .navbar{
   position:fixed;
   top:0;
   left:0;
   width:100%;
-  z-index:10;
-  padding:15px 40px; /* чуть потоньше */
+  z-index:100;
+  padding:20px 40px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  transition:background 0.5s, padding 0.3s;
+  transition:background 0.5s;
 }
+
 .navbar.scrolled{
   background:rgba(11,15,20,0.95);
-  padding:10px 40px;
 }
+
+.nav-container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  width:100%;
+}
+
 .logo img{
   height:100px;
   transition: height 0.3s;
@@ -41,27 +73,31 @@ body, html{
   display:flex;
   flex-direction:column;
   justify-content:space-between;
-  width:40px;
+  width:35px;
   height:30px;
   cursor:pointer;
-  z-index:20; /* выше видео */
+  z-index:105;
 }
 
 .menu-button span{
   display:block;
   height:4px;
-  background:#d4af37; /* или белый */
+  background:#d4af37; /* золотой контрастный */
   border-radius:2px;
   transition:all 0.5s;
+  box-shadow:0 2px 5px rgba(0,0,0,0.5);
 }
+
 .menu-button.open span:nth-child(1){
-  transform:rotate(45deg) translate(5px,5px);
+  transform:rotate(45deg) translate(7px,7px);
 }
+
 .menu-button.open span:nth-child(2){
   opacity:0;
 }
+
 .menu-button.open span:nth-child(3){
-  transform:rotate(-45deg) translate(5px,-5px);
+  transform:rotate(-45deg) translate(7px,-7px);
 }
 
 /* MENU OVERLAY */
@@ -78,23 +114,60 @@ body, html{
   align-items:center;
   gap:50px;
   font-size:40px;
-  z-index:20;
+  z-index:100;
   transform:translateY(-100%);
   transition:transform 0.5s;
 }
+
 .menu-overlay a{
   color:white;
   font-family:serif;
   letter-spacing:3px;
   transition:opacity 0.3s;
 }
+
 .menu-overlay a:hover{
   opacity:0.7;
 }
+
 .menu-overlay.show{
   transform:translateY(0);
 }
 
+/* MOBILE LOGO SHIFT */
+@media (max-width:768px){
+  .logo{
+    margin-left:10px; /* сдвигаем логотип чуть левее */
+  }
+  .menu-button{
+    width:35px;
+    height:30px;
+  }
+  .menu-overlay{
+    font-size:32px;
+    gap:30px;
+  }
+}
+</style>
+
+<script>
+const burger = document.getElementById("burger");
+const menu = document.getElementById("menu");
+
+burger.addEventListener("click", () => {
+  burger.classList.toggle("open");
+  menu.classList.toggle("show");
+});
+
+window.addEventListener("scroll", () => {
+  const navbar = document.getElementById("navbar");
+  if(window.scrollY > 50){
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
+</script>
 /* HERO VIDEO */
 .hero-video{
   position:relative;
