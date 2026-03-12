@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ocean Peak - Private Yacht & Luxury Charters</title>
+
+<title>Ocean Peak | Private Yacht Charters Tenerife</title>
+
 <style>
-body, html {margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; scroll-behavior:smooth; color:white;}
-.hero-video {position:relative; height:100vh; overflow:hidden; display:flex; justify-content:center; align-items:center; text-align:center;}
-.hero-video video {position:absolute; top:50%; left:50%; min-width:100%; min-height:100%; width:auto; height:auto; transform:translate(-50%, -50%); object-fit:cover; transition: transform 0.5s ease;}
-.hero-video:hover video {transform:translate(-50%, -50%) scale(1.05);}
-.hero-video .overlay {position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.45);}
-.hero-video .content {position:relative; z-index:2; max-width:900px;}
-.hero-video .title {font-size:60px; font-family:serif; letter-spacing:3px; margin-bottom:20px; color:#d4af37;}
-.hero-video .subtitle {font-size:24px; margin-bottom:30px; line-height:1.6;}
-.button {padding:15px 30px; border:none; border-radius:30px; background:#d4af37; color:black; font-weight:bold; font-size:18px; cursor:pointer; text-decoration:none;}
-.services {display:flex; justify-content:space-around; flex-wrap:wrap; padding:80px 20px; background:#0b0f14;}
-.service {flex:1 1 250px; margin:20px; text-align:center;}
-.service-icon {font-size:50px; margin-bottom:20px; color:#d4af37;}
-.service-title {font-size:24px; margin-bottom:10px;}
-.service-text {font-size:18px; line-height:1.5; opacity:0.8;}
-.yacht-section {display:flex; flex-direction:row; flex-wrap:wrap; padding:0; margin:10; background:#0b0f14;}
-.yacht-card {position:relative; flex:1 1 100%; height:80vh; overflow:hidden; display:flex; align-items:center; justify-content:center; text-align:center;}
-.yacht-card img {width:100%; height:100%; object-fit:cover; filter:brightness(0.55);}
-.yacht-card .content {position:absolute; z-index:2; max-width:800px; color:white;}
-.yacht-card .title {font-size:50px; font-family:serif; color:#d4af37; margin-bottom:15px;}
-.yacht-card .subtitle {font-size:20px; line-height:1.6; margin-bottom:20px;}
-.floating-whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;border-radius:50%;width:60px;height:60px;display:flex;align-items:center;justify-content:center;font-size:30px;text-decoration:none;box-shadow:0 4px 8px rgba(0,0,0,0.3);z-index:1000;}
+
+body, html{
+margin:0;
+padding:0;
+font-family:Arial, Helvetica, sans-serif;
+scroll-behavior:smooth;
+color:white;
+background:#0b0f14;
+}
+
+a{
+text-decoration:none;
+}
+
+/* NAVBAR */
+
 .navbar{
 position:absolute;
 top:0;
@@ -33,6 +31,7 @@ left:0;
 width:100%;
 z-index:10;
 padding:20px 40px;
+background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0));
 }
 
 .nav-container{
@@ -48,7 +47,6 @@ height:60px;
 nav a{
 color:white;
 margin-left:30px;
-text-decoration:none;
 font-size:18px;
 letter-spacing:1px;
 transition:opacity 0.3s;
@@ -57,84 +55,354 @@ transition:opacity 0.3s;
 nav a:hover{
 opacity:0.7;
 }
+
+/* HERO */
+
+.hero-video{
+position:relative;
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero-video video{
+position:absolute;
+top:50%;
+left:50%;
+min-width:100%;
+min-height:100%;
+transform:translate(-50%, -50%);
+object-fit:cover;
+}
+
+.overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.45);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:900px;
+}
+
+.hero-title{
+font-size:60px;
+font-family:serif;
+letter-spacing:3px;
+color:#d4af37;
+margin-bottom:20px;
+text-shadow:0 2px 20px rgba(0,0,0,0.7);
+}
+
+.hero-subtitle{
+font-size:24px;
+margin-bottom:30px;
+}
+
+.button{
+padding:15px 30px;
+border-radius:30px;
+background:#d4af37;
+color:black;
+font-weight:bold;
+font-size:18px;
+}
+
+/* SERVICES */
+
+.services{
+display:flex;
+justify-content:space-around;
+flex-wrap:wrap;
+padding:100px 20px;
+}
+
+.service{
+flex:1 1 250px;
+margin:20px;
+text-align:center;
+}
+
+.service-icon{
+font-size:50px;
+margin-bottom:20px;
+color:#d4af37;
+}
+
+.service-title{
+font-size:24px;
+margin-bottom:10px;
+}
+
+.service-text{
+opacity:0.8;
+line-height:1.6;
+}
+
+/* YACHTS */
+
+.yacht-section{
+padding:60px 0;
+}
+
+.yacht-card{
+position:relative;
+height:80vh;
+margin-bottom:80px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+overflow:hidden;
+}
+
+.yacht-card img{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+filter:brightness(0.55);
+transition:transform 0.6s;
+}
+
+.yacht-card:hover img{
+transform:scale(1.05);
+}
+
+.yacht-content{
+position:relative;
+z-index:2;
+max-width:700px;
+}
+
+.yacht-title{
+font-size:50px;
+font-family:serif;
+color:#d4af37;
+margin-bottom:20px;
+}
+
+.yacht-subtitle{
+font-size:20px;
+margin-bottom:30px;
+line-height:1.6;
+}
+
+/* WHATSAPP */
+
+.floating-whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+border-radius:50%;
+width:60px;
+height:60px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+box-shadow:0 4px 8px rgba(0,0,0,0.3);
+z-index:1000;
+}
+
 </style>
+
 </head>
+
 <body>
+
+
 <header class="navbar">
-  <div class="nav-container">
 
-    <div class="logo">
-      <img src="logo.png" alt="Ocean Peak">
-    </div>
+<div class="nav-container">
 
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Yachts</a>
-      <a href="#">Experiences</a>
-      <a href="#">Contact</a>
-    </nav>
+<div class="logo">
+<img src="logo.png">
+</div>
 
-  </div>
+<nav>
+<a href="#">Home</a>
+<a href="#">Yachts</a>
+<a href="#">Experiences</a>
+<a href="#">Contact</a>
+</nav>
+
+</div>
+
 </header>
-<!-- Hero Video -->
+
+
 <section class="hero-video">
-  <video autoplay muted loop playsinline>
-    <source src="lady_sunshine_ocean.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <div class="overlay"></div>
-  <div class="content">
-    <div class="title">Private Luxury Charters</div>
-    <div class="subtitle">Explore Tenerife & the Canary Islands with Ocean Peak<br>Exclusive yachts and motor boats for VIP experiences</div>
-    <a href="https://wa.me/XXXXXXXXXXX" class="button">Book Now</a>
-  </div>
+
+<video autoplay muted loop playsinline>
+<source src="lady_sunshine_ocean.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<div class="hero-title">
+Private Luxury Charters
+</div>
+
+<div class="hero-subtitle">
+Explore Tenerife & the Canary Islands with Ocean Peak
+</div>
+
+<a href="#yachts" class="button">
+Explore Yachts
+</a>
+
+</div>
+
 </section>
 
-<!-- Services Block -->
+
+
 <section class="services">
-  <div class="service">
-    <div class="service-icon">🐬</div>
-    <div class="service-title">Whale & Dolphin Watching</div>
-    <div class="service-text">Experience the wild Atlantic waters and discover whales and dolphins in their natural habitat.</div>
-  </div>
-  <div class="service">
-    <div class="service-icon">🌅</div>
-    <div class="service-title">Sunset Cruises</div>
-    <div class="service-text">Enjoy unforgettable sunsets on the ocean with champagne and a private atmosphere.</div>
-  </div>
-  <div class="service">
-    <div class="service-icon">🌊</div>
-    <div class="service-title">Inter-Island Charters</div>
-    <div class="service-text">Private trips to nearby islands, tailored itineraries, and full VIP service on board.</div>
-  </div>
+
+<div class="service">
+
+<div class="service-icon">🐬</div>
+
+<div class="service-title">
+Whale & Dolphin Watching
+</div>
+
+<div class="service-text">
+Experience dolphins and whales in their natural habitat in the waters of Tenerife.
+</div>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">🌅</div>
+
+<div class="service-title">
+Sunset Cruises
+</div>
+
+<div class="service-text">
+Private sunset charters with champagne and unforgettable ocean views.
+</div>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">🌊</div>
+
+<div class="service-title">
+Island Trips
+</div>
+
+<div class="service-text">
+Private trips to La Gomera and other Canary Islands.
+</div>
+
+</div>
+
 </section>
 
-<!-- Yachts Section -->
-<section class="yacht-section">
-  <div class="yacht-card">
-    <img src="lady_1.jpg" alt="Lady Sunshine">
-    <div class="content">
-      <div class="title">Lady Sunshine</div>
-      <div class="subtitle">Daily charters up to 12 guests • Inter-island up to 6 guests<br>3h €850 • 4h €1100 • 6h €1600<br><a href="https://wa.me/XXXXXXXXXXX" class="button">Book Private Charter</a></div>
-    </div>
-  </div>
-  <div class="yacht-card">
-    <img src="champagne_1.png" alt="Champagne">
-    <div class="content">
-      <div class="title">Champagne</div>
-      <div class="subtitle">Up to 8 guests<br>3h €500 • 4h €650 • 6h €950<br><a href="https://wa.me/XXXXXXXXXXX" class="button">Book Private Charter</a></div>
-    </div>
-  </div>
-  <div class="yacht-card">
-    <img src="armani_1.png" alt="Armani">
-    <div class="content">
-      <div class="title">Armani</div>
-      <div class="subtitle">Up to 6 guests<br>3h €400 • 4h €500 • 6h €850<br><a href="https://wa.me/XXXXXXXXXXX" class="button">Book Private Charter</a></div>
-    </div>
-  </div>
+
+
+<section class="yacht-section" id="yachts">
+
+
+<div class="yacht-card">
+
+<img src="lady_1.jpg">
+
+<div class="yacht-content">
+
+<div class="yacht-title">
+Lady Sunshine
+</div>
+
+<div class="yacht-subtitle">
+Luxury yacht for private charters and island trips
+</div>
+
+<a href="lady-sunshine.html" class="button">
+Explore
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="yacht-card">
+
+<img src="champagne_1.png">
+
+<div class="yacht-content">
+
+<div class="yacht-title">
+Champagne
+</div>
+
+<div class="yacht-subtitle">
+Perfect boat for whale watching and sunset cruises
+</div>
+
+<a href="champagne.html" class="button">
+Explore
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="yacht-card">
+
+<img src="armani_1.png">
+
+<div class="yacht-content">
+
+<div class="yacht-title">
+Armani
+</div>
+
+<div class="yacht-subtitle">
+Compact luxury motor boat for private ocean experiences
+</div>
+
+<a href="armani.html" class="button">
+Explore
+</a>
+
+</div>
+
+</div>
+
+
 </section>
 
-<a href="https://wa.me/XXXXXXXXXXX" class="floating-whatsapp" target="_blank">📱</a>
+
+<a href="https://wa.me/XXXXXXXXXX" class="floating-whatsapp">
+📱
+</a>
+
 
 </body>
 </html>
