@@ -21,19 +21,20 @@ body, html{
   left:0;
   width:100%;
   z-index:10;
-  padding:20px 40px;
+  padding:15px 40px; /* потоньше */
   display:flex;
   justify-content:space-between;
   align-items:center;
-  transition:background 0.5s;
+  transition:background 0.5s, padding 0.3s;
 }
 
 .navbar.scrolled{
   background:rgba(11,15,20,0.95);
+  padding:10px 40px;
 }
 
 .logo img{
-  height:110px;
+  height:100px;
   transition: height 0.3s;
 }
 
@@ -42,22 +43,22 @@ body, html{
   display:flex;
   flex-direction:column;
   justify-content:space-between;
-  width:35px;
-  height:30px;
+  width:30px;
+  height:25px;
   cursor:pointer;
   z-index:15;
 }
 
 .menu-button span{
   display:block;
-  height:4px;
+  height:3px; /* потоньше полоски */
   background:#d4af37;
   border-radius:2px;
   transition:all 0.5s;
 }
 
 .menu-button.open span:nth-child(1){
-  transform:rotate(45deg) translate(7px,7px);
+  transform:rotate(45deg) translate(5px,5px);
 }
 
 .menu-button.open span:nth-child(2){
@@ -65,7 +66,7 @@ body, html{
 }
 
 .menu-button.open span:nth-child(3){
-  transform:rotate(-45deg) translate(7px,-7px);
+  transform:rotate(-45deg) translate(5px,-5px);
 }
 
 /* MENU OVERLAY */
@@ -100,6 +101,22 @@ body, html{
 
 .menu-overlay.show{
   transform:translateY(0);
+}
+
+/* DESKTOP MENU */
+@media(min-width:992px){
+  .menu-button { display:none; }
+  .menu-overlay{
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-end;
+    gap:40px;
+    font-size:18px;
+    transform:translateY(0);
+    position:static;
+    background:none;
+    height:auto;
+  }
 }
 
 /* HERO VIDEO */
@@ -157,6 +174,21 @@ body, html{
   margin-bottom:30px;
 }
 
+/* SCROLL HINT */
+.scroll-hint{
+  position:absolute;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:30px;
+  animation: bounce 2s infinite;
+  color:#d4af37;
+}
+@keyframes bounce{
+  0%,100%{transform:translate(-50%,0);}
+  50%{transform:translate(-50%,10px);}
+}
+
 .button{
   padding:15px 30px;
   border-radius:30px;
@@ -165,17 +197,25 @@ body, html{
   font-weight:bold;
   font-size:18px;
   text-decoration:none;
+  transition: all 0.3s;
+}
+
+.button:hover{
+  box-shadow:0 0 20px #d4af37;
+  transform:scale(1.05);
 }
 
 /* YACHTS */
 .yacht-section{
-  padding:60px 0;
+  padding:60px 20px;
+  display:flex;
+  flex-direction:column;
+  gap:60px;
 }
 
 .yacht-card{
   position:relative;
   height:80vh;
-  margin-bottom:80px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -245,6 +285,7 @@ body, html{
   border:5px solid #d4af37;
   border-radius:15px;
   overflow:hidden;
+  filter: grayscale(20%) brightness(0.9);
 }
 
 /* WHATSAPP */
@@ -287,7 +328,7 @@ body, html{
 
 <!-- HERO VIDEO -->
 <section class="hero-video">
-  <video autoplay muted loop playsinline>
+  <video autoplay muted loop playsinline poster="hero_poster.jpg">
     <source src="all_boats.mp4" type="video/mp4">
   </video>
   <div class="overlay"></div>
@@ -296,12 +337,13 @@ body, html{
     <div class="hero-subtitle">Explore Tenerife & the Canary Islands with Ocean Peak</div>
     <a href="#yachts" class="button">Explore our fleet</a>
   </div>
+  <div class="scroll-hint">⬇</div>
 </section>
 
 <!-- YACHTS SECTION -->
 <section class="yacht-section" id="yachts">
   <div class="yacht-card">
-    <video autoplay muted loop playsinline>
+    <video autoplay muted loop playsinline poster="lady_1.jpg">
       <source src="lady_sunshine_ocean.mp4" type="video/mp4">
     </video>
     <div class="yacht-content">
@@ -312,7 +354,7 @@ body, html{
   </div>
 
   <div class="yacht-card">
-    <video autoplay muted loop playsinline>
+    <video autoplay muted loop playsinline poster="champagne_1.jpg">
       <source src="champagne_ocean.mp4" type="video/mp4">
     </video>
     <div class="yacht-content">
@@ -323,7 +365,7 @@ body, html{
   </div>
 
   <div class="yacht-card">
-    <video autoplay muted loop playsinline>
+    <video autoplay muted loop playsinline poster="armani_1.jpg">
       <source src="armani_ocean.mp4" type="video/mp4">
     </video>
     <div class="yacht-content">
